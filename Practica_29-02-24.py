@@ -11,7 +11,7 @@ class Pasajeros:
 
                     El apellido del pasajero es: {self.apellido}
 
-                    La edad del pasajero es: {self.edad}
+                    La edad del pasajero es: {self.edad} años
 
                     El pasaporte del pasajero es: {self.pasaporte}
 
@@ -19,7 +19,11 @@ class Pasajeros:
 
 pasajero1 = Pasajeros("Randy", "Garcia",15,"PA54684")
 
-#pasajero1.mostarInformacion()
+pasajero2 = Pasajeros("Juan","Perez",42,"PO25542")
+
+pasajero3 = Pasajeros("Juana","Lopez",21,"PI635542")
+
+# pasajero2.mostarInformacion()
 
 
 class Vuelo:
@@ -54,11 +58,25 @@ class Vuelo:
             print("No hay asientos disponibles")
 
     #Hacer el de cancelar asiento 
+    def removerAsiento(self,pasajero):
+        if pasajero in self.reservasAsientop:
+            self.reservasAsientop.remove(pasajero)
+            self.cantidadA += 1
+        else:
+            print(f"No se ha encontrado ninguna reserva con a nombre de '{pasajero.nombre}'. Por favor vuelva a intentar")
 
 vuelo1 = Vuelo("HK21685","Medellin","Cartagena",80)
 
-#vuelo1.mostarInformacion()
+vuelo1.reservaAsiento(pasajero2)
+
 
 vuelo1.reservaAsiento(pasajero1)
 
+
+vuelo1.removerAsiento(pasajero3)
+
 vuelo1.mostarInformacion()
+
+for pasajero in vuelo1.reservasAsientop:
+    print(pasajero.nombre)
+    
