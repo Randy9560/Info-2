@@ -17,12 +17,6 @@ class Pasajeros:
 
                                """)
 
-pasajero1 = Pasajeros("Randy", "Garcia",15,"PA54684")
-
-pasajero2 = Pasajeros("Juan","Perez",42,"PO25542")
-
-pasajero3 = Pasajeros("Juana","Lopez",21,"PI635542")
-
 # pasajero2.mostarInformacion()
 
 
@@ -33,7 +27,8 @@ class Vuelo:
         self._destino = destino
         self.cantidadA = cantidad
         self.reservasAsientop=[]
-        #Hacer dependecia Reserva vuelo
+        reservaVuelo.adicionVuelos(self)
+        #Hacer dependecia Reserva vuelo(Ya esta hecha)
     
     def mostarInformacion(self):
         print(f""" 
@@ -57,26 +52,75 @@ class Vuelo:
         else: 
             print("No hay asientos disponibles")
 
-    #Hacer el de cancelar asiento 
+    #Hacer el de cancelar asiento(Ya esta hecho) 
     def removerAsiento(self,pasajero):
         if pasajero in self.reservasAsientop:
             self.reservasAsientop.remove(pasajero)
             self.cantidadA += 1
+            print(f"se ha eliminado la reserva del pasajero '{pasajero.nombre}' del vuelo N° '{self.numeroVuelo}")
         else:
-            print(f"No se ha encontrado ninguna reserva con a nombre de '{pasajero.nombre}'. Por favor vuelva a intentar")
+            print(f"No se ha encontrado ninguna reserva a nombre de '{pasajero.nombre}'. Por favor vuelva a intentar")
+  
+
+class reservaVuelo:
+
+    listaVuelos=[]
+
+    def __init__(self,aereolinia): 
+        self.nombreAereolinia = aereolinia
+
+    @classmethod
+    def adicionVuelos(cls,vuelo):
+        if vuelo in cls.listaVuelos:
+            print(f"El vuelo con N° '{vuelo.numeroVuelo}' ya se ha agreagado")
+        else:
+            cls.listaVuelos.append(vuelo)
+            print(f"El vuelo con N° '{vuelo.numeroVuelo}' ha sido añadido correctamente")
+
+    def busquedaVuelo(self,numero): #Validar cuando no hay un vuelo(Hacer)
+        for i in reservaVuelo.listaVuelos:
+            if i.numeroVuelo == numero:
+                print(f"Vuelo encontrado")
+                return i.mostarInformacion()
+          
+    def vuelosDisponibles(self):
+        for j in reservaVuelo.listaVuelos:
+            print(j.numeroVuelo)
+            print("Los vuelos disponibles son: ")
+            print(j.mostarInformacion())
+
+    def realizarReserva(self, pasajero, vuelo):
+        return vuelo.reservaAsiento(pasajero)
+
+    def cancelarReserva(self, pasajero, vuelo):
+        return vuelo.removerAsiento(pasajero) 
+    
+pasajero1 = Pasajeros("Randy", "Garcia",15,"PA54684")
+
+pasajero2 = Pasajeros("Juan","Perez",42,"PO25542")
+
+pasajero3 = Pasajeros("Juana","Lopez",21,"PI635542")
+
+# vuelo1.reservaAsiento(pasajero2)
+
+# vuelo1.reservaAsiento(pasajero1)
+
+# vuelo1.removerAsiento(pasajero3)
+
+# vuelo1.mostarInformacion()
+
+# for pasajero in vuelo1.reservasAsientop:
+#     print(pasajero.nombre)
 
 vuelo1 = Vuelo("HK21685","Medellin","Cartagena",80)
 
-vuelo1.reservaAsiento(pasajero2)
+vuelo2 = Vuelo("KJ52465","Medellin", "Bogota",32)
 
+latam = reservaVuelo("Latam")
 
-vuelo1.reservaAsiento(pasajero1)
+# latam.busquedaVuelo("HK21685")
+# # print(latam.nombreAereolinia)
 
+# latam.realizarReserva(pasajero1,vuelo1)
 
-vuelo1.removerAsiento(pasajero3)
-
-vuelo1.mostarInformacion()
-
-for pasajero in vuelo1.reservasAsientop:
-    print(pasajero.nombre)
-    
+latam.vuelosDisponibles()
