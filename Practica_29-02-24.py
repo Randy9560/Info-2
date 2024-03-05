@@ -31,7 +31,7 @@ class Vuelo:
         #Hacer dependecia Reserva vuelo(Ya esta hecha)
     
     def mostarInformacion(self):
-        print(f""" 
+        return f""" 
                     El vuelo N°: {self.numeroVuelo}
 
                     Origen:     {self._origen}
@@ -40,7 +40,7 @@ class Vuelo:
 
                     Asientos disponibles: {self.cantidadA}
 
-                    """)
+                    """
     
     def reservaAsiento(self,pasajero): #relacion de asociacion
         if pasajero in self.reservasAsientop:
@@ -85,8 +85,8 @@ class reservaVuelo:
           
     def vuelosDisponibles(self):
         for j in reservaVuelo.listaVuelos:
-            print(j.numeroVuelo)
-            print("Los vuelos disponibles son: ")
+            # print(j.numeroVuelo)
+            # print("Los vuelos disponibles son: ")
             print(j.mostarInformacion())
 
     def realizarReserva(self, pasajero, vuelo):
