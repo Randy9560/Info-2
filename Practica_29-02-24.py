@@ -101,7 +101,6 @@ pasajero2 = Pasajeros("Juan","Perez",42,"PO25542")
 
 pasajero3 = Pasajeros("Juana","Lopez",21,"PI635542")
 
-# vuelo1.reservaAsiento(pasajero2)
 
 # vuelo1.reservaAsiento(pasajero1)
 
@@ -113,14 +112,15 @@ pasajero3 = Pasajeros("Juana","Lopez",21,"PI635542")
 #     print(pasajero.nombre)
 
 vuelo1 = Vuelo("HK21685","Medellin","Cartagena",80)
+vuelo1.reservaAsiento(pasajero2)
 
-vuelo2 = Vuelo("KJ52465","Medellin", "Bogota",32)
+# vuelo2 = Vuelo("KJ52465","Medellin", "Bogota",32)
 
-latam = reservaVuelo("Latam")
+# latam = reservaVuelo("Latam")
 
 # latam.busquedaVuelo("HK21685")
 # # print(latam.nombreAereolinia)
 
 # latam.realizarReserva(pasajero1,vuelo1)
 
-latam.vuelosDisponibles()
+# latam.vuelosDisponibles()
