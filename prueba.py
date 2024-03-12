@@ -162,33 +162,42 @@
 # except ValueError as e:
 #     print(f"Error: {e}")
 
+# class Paciente:
+#     def __init__(self, nombre, cedula):
+#         self.nombre = nombre
+#         self.cedula = cedula
+
+#     def __eq__(self, other):
+#         if isinstance(other, Paciente):
+#             return self.cedula == other.cedula
+#         return False
+
+# class Medico:
+#     listaPacientes = []
+
+#     @classmethod
+#     def adicionarPaciente(cls, paciente):
+#         if paciente in cls.listaPacientes:
+#             print("El paciente ya ha sido ingresado")
+#         else:
+#             cls.listaPacientes.append(paciente)
+#             print("Paciente agregado correctamente")
+
+# # Ejemplo de uso
+# paciente1 = Paciente("Juan", 123456789)
+# paciente2 = Paciente("Ana", 987654321)
+
+# Medico.adicionarPaciente(paciente1)
+# Medico.adicionarPaciente(paciente2)
+# Medico.adicionarPaciente(paciente1)  # Intentar agregar el mismo paciente nuevamente
+
+# print(Medico.listaPacientes)
+
 class Paciente:
-    def __init__(self, nombre, cedula):
-        self.nombre = nombre
-        self.cedula = cedula
+    def __init__(self,nomnre):
+        self._nombre = nomnre
 
-    def __eq__(self, other):
-        if isinstance(other, Paciente):
-            return self.cedula == other.cedula
-        return False
+pa = Paciente('j')
 
-class Medico:
-    listaPacientes = []
-
-    @classmethod
-    def adicionarPaciente(cls, paciente):
-        if paciente in cls.listaPacientes:
-            print("El paciente ya ha sido ingresado")
-        else:
-            cls.listaPacientes.append(paciente)
-            print("Paciente agregado correctamente")
-
-# Ejemplo de uso
-paciente1 = Paciente("Juan", 123456789)
-paciente2 = Paciente("Ana", 987654321)
-
-Medico.adicionarPaciente(paciente1)
-Medico.adicionarPaciente(paciente2)
-Medico.adicionarPaciente(paciente1)  # Intentar agregar el mismo paciente nuevamente
-
-print(Medico.listaPacientes)
+print(pa._nombre)
+        
