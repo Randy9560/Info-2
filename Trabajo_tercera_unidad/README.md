@@ -129,10 +129,16 @@ Para la anonimizacion de hace un for en un rango del valor de las archivos total
 
 - **_'Metodo convertirEstudio()'_**: En este metodo vamos a usar la libreria (**_'dicom2nifti'_**), este metodo es necesario para convertir los archivos DICOM a formato NIFTI, este proceso se realiza ya que es beneficioso por varias razones, como, que al convertir los archivos a NIFTI el peso de los datos se reduce en gran magnitud, ya que los datos DICOM, tienen que estar en una carpeta y son demasiados archivos por carpeta, por otro lado, al convertirlos a NIFTI es un solo archivo por estudio, cabe resaltar que en en la carpeta del estudio todos los archivos .dcm deben pertenecer a un solo estudio, si hay varios estudios en una sola carpeta, nos saldra un error, y por ultimo el beneficio mas importante es que al pasar los datos a formato NIFTI podemos usar la libreria **_'Nilearn'_** para visualizar las imagenes de una forma mas estructurada.
 
-  1) El primer paso de este metodo es basicamente el mismo del metodo anterior donde se pide un nombre para una nueva carpeta, se valida que no haya ninguna carpeta con el mismo nombre en la carpeta general donde se esta trabajando, si todo sale bien, se procede a crear la carpeta donde se va a guardar el nuevo archivo en formato NIFTI, este paso es necesario ya que el metodo qye se va a utilizar (**_'dicom2nifti.convert_directory'_**), necesita la ruta de la carpeta donde se va a guardar el archivo convertido a NIFTI y la carperta donde estan los datos tipo DICOM que van a ser convertidos.
+  1) El primer paso de este metodo es basicamente el mismo del metodo anterior donde se pide un nombre para una nueva carpeta, se validá que no haya ninguna carpeta con el mismo nombre en la carpeta general donde se esta trabajando, si todo sale bien, se procede a crear la carpeta donde se va a guardar el nuevo archivo en formato NIFTI, este paso es necesario ya que el metodo qye se va a utilizar (**_'dicom2nifti.convert_directory'_**), necesita la ruta de la carpeta donde se va a guardar el archivo convertido a NIFTI y la carperta donde estan los datos tipo DICOM que van a ser convertidos.
   2)  Ya como ultimo paso llamamos al metodo (**_'dicom2nifti.convert_directory(argumento1,argumento2)'_**) y como argumento1 le proporcionamos la ruta de la carpeta con los datos DICOM y como argumento2 le proporcionamos la ruta de la carpeta anteriormente creado donde se va a guardar el archivo NIFTI ya procesado.
 
 Cabe recalcar que se usa un try - except en el metodo (**_'dicom2nifti.convert_directory'_**) para evitar errores desconocidos.
 
-- **_'Metodo visualizarNilearn(ruta_ArchivoNifti)'_**:
+- **_'Metodo visualizarNilearn(ruta_ArchivoNifti)'_**: En este metodo se utiliza la libreria **_'Nilearn'_** y sus metodos, se pide un atributo de instancia que es la ruta del archivo NIFTI que se desea visualizar, se nos pide mostrar el estudio de tres formas:
+
+  1) Un solo plano [Axial(Eje z), Coronal(Eje y), Sagital(Eje x)]
+  2) Los tres planos
+  3) Mosaico
+  
+Se usan los metodos **_'nilearn.image.load_img(ruta_ArchivoNifti)'_** este metodo me procesa el archivo Nifti y me obtiene toda la informacion necesaria para graficar, el otro metodo que se usa es **_'plotting.plot_anat(imagen,display_mode = 'Plano o forma en la que se desea visualizar la imagen', title = 'Titulo que se le quiera poner a la grafica')'_** este metodo me plotea la imagen antriormente procesada, me permite cambiar la forma de visualizacion y ponerle titulos a las imagenes.  
 </p>  
