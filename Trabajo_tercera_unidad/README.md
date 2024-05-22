@@ -1,7 +1,7 @@
 # Trabajo Tercera Unidad
 <p align="justify">
 Bienvenid@, en este trabajo se encontrara un codigo en el que se procesa toda la informacion de estudios DICOM, asi mismo como su visualizacion con NILEARN.
-La idea del README es proporcionarle al usuario una guia de como utilizar el codigo
+La idea del README es proporcionarle al usuario una guia de como utilizar el codigo y explicar su funcionamiento.
 </p>
 
 
@@ -105,8 +105,7 @@ En la carpeta del trabajo se encontraran tres achivos .zip los cuales se deben d
 
 ## **Paso 3 - Explicacion de metodos y atributos de la clase 'Estudio'**
 <p align="justify">
-Primero que todo, creamos una clase principal llamada 'Estudio', esta clase sera la unica de la que al momento de hacer las pruebas se crearan objetos, siguiendo esta   
-linea de pensamiento las otras clases que se van a crear seran solo para procesar los datos y para organizar las funcionalidades dentro del codigo.
+Primero que todo, creamos una clase principal llamada 'Estudio',esta clase estara encargada de la anonimizacion de los datos, la visualizacion de las imagenes con NILEARN y la conversion de datos DICOM a NIFTI, esta clase sera la unica de la que al momento de hacer las pruebas se crearan objetos, siguiendo esta linea de pensamiento las otras clases que se van a crear seran solo para procesar los datos y para organizar las funcionalidades dentro del codigo.
  
  **_PD: Para trabajar en este codigo se recomienda usar el relative path donde sea posible_**
 
@@ -146,3 +145,8 @@ Se usan los metodos **_'nilearn.image.load_img(ruta_ArchivoNifti)'_** este metod
 2) En cada menu que se hace, se agrega un **_'Try - Except'_** para evitar que el codigo se caiga si ingreso un valor tipo str, o se usa la funcion **_'raise'_** para llamar a acolacion otro error que seria si el usuario ingresa un valor que no se encuentra dentro de las opciones del menu.
 3) Cabe recalcar que todo este proceso de los menus no se hicieron dentro de un **_'while True'_** ya que al momento de graficar la imagen pedida no aparece hasta que el ciclo se cierre.  
 </p>  
+
+## **Paso 4 - Explicacion de metodos y atributos de la clase 'Paciente'**
+Lo primero que se debe explicar es el hecho de que la clase **_'Paciente'_** es heredada de la clase **_'Estudio'_**, o sea que **_'Paciente'_** es una clase hija de **_'Estudio'_**, se programo de esta manera ya que la clase **_'Paciente'_** necesita los mismos atributos de instancia que **_'Estudio'_**, lo segundo que se debe mencionar, es que la clase **_'Paciente'_** va estar encargada de tener un diccionario donde se van a almacenar los estudios separados por pacientes, esta parte va a ser filtrada por el id del paciente que traiga cada estudio. Todo esto lo va a hacer la clase **_'Paciente'_**
+
+- 
