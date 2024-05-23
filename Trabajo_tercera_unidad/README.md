@@ -7,7 +7,7 @@ La idea del README es proporcionarle al usuario una guia de como utilizar el cod
 
 ## **Instrucciones**
 <p align="justify">
-La guia constara de x pasos para todo el procesamiento de informacion y visualizacion de imagenes.
+La guia constara de 6 pasos para todo el procesamiento de informacion y visualizacion de imagenes.
 </p>
 
 ## **Paso 0 - Definicion del problema**
@@ -105,7 +105,7 @@ En la carpeta del trabajo se encontraran tres achivos .zip los cuales se deben d
 
 ## **Paso 3 - Explicacion de metodos y atributos de la clase 'Estudio'**
 <p align="justify">
-Primero que todo, creamos una clase principal llamada 'Estudio',esta clase estara encargada de la anonimizacion de los datos, la visualizacion de las imagenes con NILEARN y la conversion de datos DICOM a NIFTI, esta clase sera la unica de la que al momento de hacer las pruebas se crearan objetos, siguiendo esta linea de pensamiento las otras clases que se van a crear seran solo para procesar los datos y para organizar las funcionalidades dentro del codigo.
+Primero que todo, creamos una clase principal llamada 'Estudio',esta clase estara encargada de la anonimizacion de los datos, la visualizacion de las imagenes con NILEARN y la conversion de datos DICOM a NIFTI, esta clase sera la unica de la que al momento de hacer las pruebas se crearan objetos, siguiendo esta linea de pensamiento las otras clases que se van a crear seran solo para procesar los datos y para organizar las funcionalidades dentro del codigo. Dentro de esta clase se llaman a funciiones de otras clases, como por ejemplo, Paciente.agregar_estudioPaciente y Paciente.añadirDatos_list que son relaciones de dependencia entre clases. 
  
  **_PD: Para trabajar en este codigo se recomienda usar el relative path donde sea posible_**
 
@@ -113,7 +113,7 @@ Primero que todo, creamos una clase principal llamada 'Estudio',esta clase estar
 
 Ahora, se explicaran los metodos de la clase **'Estudio'** uno por uno:
 
-- **_'Metodo anonimizar'_**: Este metodo tiene como objetivo la anonimizacion de los datos sensibles del pacientes, tales como, el Id, la fecha de nacimiento, el nombre y el genero del paciente. Este metodo en vez de cambiarme los datos en la carpeta original, crea otra carpte dentro de la carpeta que se esta trabajando con todos los datos ya anonimizados, para esto era necesario el atributo de clase (**'path_carpetaTrabajo'**). Este metodo tiene varios atributos internos, pero son simples, los atributos son:
+- **_'Metodo _anonimizar'_**: Este metodo es privado ya que no se desea que cualquiera pueda acceder a este metodo debido a que trabaja con la anonimizacion de los datos sensibles del pacientes, tales como, el Id, la fecha de nacimiento, el nombre y el genero del paciente. Este metodo en vez de cambiarme los datos en la carpeta original, crea otra carpte dentro de la carpeta que se esta trabajando con todos los datos ya anonimizados, para esto era necesario el atributo de clase (**'path_carpetaTrabajo'**). Este metodo tiene varios atributos internos, pero son simples, los atributos son:
 
      1) **_'nombreEstudio_anonimus'_**: Pide el nombre o el codigo por el que se va a reconocer la nueva carpeta anonimizada.
      2) **_'lista_nombreCarpeta1'_**: Me crea una lista con los nombres de los archivos que estan dentro de la carpeta que estoy trabajando. 
