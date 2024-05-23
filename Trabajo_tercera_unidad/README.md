@@ -96,7 +96,7 @@ de un paciente en especifico usando como filtrador el ID del paciente, ademas de
 
 ## **Paso 2 - Obtencion los datos necesarios para realizar la prueba**
 <p align="justify">
-En la carpeta del trabajo se encontraran tres achivos .zip los cuales se deben descargar y descomprimir para ser utilizados dentro del codigo. Los nombres de los archivos .zip que necesitan ser descomprimidos son:
+En la carpeta del trabajo se encontraran tres achivos .zip los cuales se deben descargar y descomprimir para ser utilizados dentro del codigo, cabe resaltar que al momento de descomprimir los archivos .zip, se entregará un carpeta con el nombre del archivo .zip y dentro de esta carpeta habrá otra carpeta con el mismo nombre y ya dentro de esta si estaran todos los datos, se recomienda para el correcto funcionamiento del codigo, sacar la carpeta donde estan los datos de donde esta guardada y pegarla en el archivo de la carpeta donde se esta trabajando, dejando asi solo una carpeta con el nombre del archivo .zip y que dentro de esta ya esten directamente los datos. Los nombres de los archivos .zip que necesitan ser descomprimidos son:
  
 1) **'0001'**
 2) **'0002'**
