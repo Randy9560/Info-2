@@ -1,0 +1,20 @@
+[
+    {
+        "Nombre": "Randy",
+        "Apellido": "Garcia",
+        "Edad": "22",
+        "Identificacion": "12347"
+    },
+    {
+        "Nombre": "majo",
+        "Apellido": "rios",
+        "Edad": "18",
+        "Identificacion": "678"
+    },
+    {
+        "Nombre": "juli",
+        "Apellido": "vargas",
+        "Edad": "18",
+        "Identificacion": "24654"
+    }
+]

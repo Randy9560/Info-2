@@ -20,11 +20,11 @@ class Modelo(object):
     def verificarUsuario(self, u:str, p:str):
         try:
             if self.__usuarios[p] == u:
-                return True
-            else:
-                return False
+                return (1, f'{u} bienvenido')
+            
+            return 0
         except: 
-            return False
+            return 2
         
     def guardar_info(self):
         with open(self.base_datos, 'w') as archivo:
@@ -49,10 +49,14 @@ class Modelo(object):
         return False
     
     def eliminar_paciente(self, id_paciente:str):
-        self.datos = [p for p in self.datos if p['Identificacion'] != id_paciente]
+        try:
+            self.datos = [p for p in self.datos if p['Identificacion'] != id_paciente]
+            self.guardar_info()
+        except:
+            return False
 
     def buscar_paciente(self, nombre_paciente:str):
         nombre_paciente = nombre_paciente.lower().strip()
-        return [p for p in self.datos if p['Identificacion'].startswith(nombre_paciente)]
+        return [p for p in self.datos if p['Nombre'].lower().startswith(nombre_paciente)]
     
         
