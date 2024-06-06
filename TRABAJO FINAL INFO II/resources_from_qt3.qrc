@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="images">
+    <file>imagenes/hospital.png</file>
+    <file>imagenes/patient-on-the-hospital-bed-and-doctor-visitor-graphic-illustration-png.webp</file>
+  </qresource>
+</RCC>

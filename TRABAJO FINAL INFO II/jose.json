@@ -1,0 +1,26 @@
+[
+    {
+        "Nombre": "jamer",
+        "Apellido": "garcia",
+        "Edad": "52",
+        "Genero": "Masculino",
+        "Enfermo": "NO",
+        "Identificacion": "465"
+    },
+    {
+        "Nombre": "sara",
+        "Apellido": "zapata",
+        "Edad": "20",
+        "Genero": "Femenino",
+        "Enfermo": "SI",
+        "Identificacion": "5255"
+    },
+    {
+        "Nombre": "alejo",
+        "Apellido": "morales",
+        "Edad": "12",
+        "Genero": "Masculino",
+        "Enfermo": "SI",
+        "Identificacion": "4141"
+    }
+]

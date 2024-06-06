@@ -1,0 +1,23 @@
+[
+    {
+        "Nombre": "Jose",
+        "Apellido": "Camacho",
+        "Edad": "25",
+        "Genero": "Masculino",
+        "Identificacion": "6868"
+    },
+    {
+        "Nombre": "sd",
+        "Apellido": "dsds",
+        "Edad": "54",
+        "Genero": "Masculino",
+        "Identificacion": "979"
+    },
+    {
+        "Nombre": "sara",
+        "Apellido": "gg",
+        "Edad": "20",
+        "Genero": "Femenino",
+        "Identificacion": "555"
+    }
+]
